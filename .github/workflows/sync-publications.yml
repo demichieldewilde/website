@@ -1,0 +1,33 @@
+name: Sync publications
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch ORCID and arXiv publications
+        run: python scripts/sync_publications.py
+      - name: Commit updates
+        run: |
+          if git diff --quiet -- assets/publications.js; then
+            echo "Publications are already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/publications.js
+          git commit -m "Update publications"
+          git push
