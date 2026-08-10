@@ -108,4 +108,5 @@ footer{min-height:190px;padding:3rem 5vw;display:grid;grid-template-columns:1fr 
 .collaboration-strip>div:last-child{font:300 1.1rem/1.7 var(--serif);max-width:560px}
 .collaboration-strip .text-link{font-family:var(--mono);font-size:.68rem}
 @media(max-width:850px){.paper-note{grid-template-columns:1fr;gap:3rem;padding:4rem 0}.paper-note.reverse .paper-visual{order:0}.paper-visual{height:360px}.collaboration-call,.collaboration-strip{grid-template-columns:1fr}.collaboration-call{padding:3rem}.collaboration-call .button{grid-column:1}}
+.site-header nav a.lang-switch{opacity:.55}.site-header nav a.lang-switch:hover{opacity:1}
 @media(max-width:520px){.paper-visual{height:290px}.paper-note-copy h2{font-size:2.6rem}.collaboration-call{padding:2rem}}

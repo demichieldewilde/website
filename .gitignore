@@ -9,3 +9,4 @@ cv/*.fdb_latexmk
 __pycache__/
 */__pycache__/
 tmp/pdfs/
+.claude/settings.local.json

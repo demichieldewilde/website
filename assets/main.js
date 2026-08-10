@@ -1,9 +1,16 @@
+const LANG = document.documentElement.lang === 'nl' ? 'nl' : 'en';
+const I18N = {
+  en: { menuOpen: 'Menu', menuClose: 'Close', typeLabels: { paper: 'Paper', preprint: 'Preprint' }, dateLocale: 'en-GB' },
+  nl: { menuOpen: 'Menu', menuClose: 'Sluiten', typeLabels: { paper: 'Artikel', preprint: 'Preprint' }, dateLocale: 'nl-BE' },
+};
+const T = I18N[LANG];
+
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-header nav');
 menuButton?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', open);
-  menuButton.textContent = open ? 'Close' : 'Menu';
+  menuButton.textContent = open ? T.menuClose : T.menuOpen;
 });
 
 const observer = new IntersectionObserver((entries) => {
@@ -117,7 +124,7 @@ function escapeHtml(value) {
 function formatTalkDate(value) {
   const date = new Date(`${value}T00:00:00`);
   if (Number.isNaN(date.valueOf())) return escapeHtml(value);
-  return date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  return date.toLocaleDateString(T.dateLocale, { day: '2-digit', month: 'short', year: 'numeric' });
 }
 
 function renderTalks() {
@@ -148,7 +155,7 @@ function renderPublications() {
   function update() {
     const query = search.value.toLowerCase();
     const shown = pubs.filter(p => (filter === 'all' || p.type === filter) && JSON.stringify(p).toLowerCase().includes(query));
-    list.innerHTML = shown.map(p => `<article class="pub-item"><span>${p.year}</span><div><p>${p.type}</p><h3>${p.title}</h3><small>${p.authors} · ${p.venue}</small></div><a href="${p.url}" target="_blank" rel="noopener">↗</a></article>`).join('');
+    list.innerHTML = shown.map(p => `<article class="pub-item"><span>${p.year}</span><div><p>${T.typeLabels[p.type] || p.type}</p><h3>${p.title}</h3><small>${p.authors} · ${p.venue}</small></div><a href="${p.url}" target="_blank" rel="noopener">↗</a></article>`).join('');
   }
   document.querySelectorAll('.filter').forEach(btn => btn.addEventListener('click', () => {
     document.querySelector('.filter.active').classList.remove('active'); btn.classList.add('active'); filter=btn.dataset.filter; update();
