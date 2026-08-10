@@ -109,6 +109,29 @@ document.querySelector('#shuffle-thought')?.addEventListener('click', () => {
   p.textContent = next;
 });
 
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[char]));
+}
+
+function formatTalkDate(value) {
+  const date = new Date(`${value}T00:00:00`);
+  if (Number.isNaN(date.valueOf())) return escapeHtml(value);
+  return date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+function renderTalks() {
+  const list = document.querySelector('[data-talk-list]');
+  if (!list) return;
+  const talks = window.TALKS || [];
+  list.innerHTML = talks.map(talk => {
+    const event = escapeHtml(talk.event);
+    const venue = escapeHtml(talk.venue);
+    const location = event && venue ? `${event} &middot; ${venue}` : event || venue;
+    return `<article class="talk-item"><time datetime="${escapeHtml(talk.date)}">${formatTalkDate(talk.date)}</time><div><p class="institution">${location}</p><h3>${escapeHtml(talk.title)}</h3></div></article>`;
+  }).join('');
+}
+
 function renderPublications() {
   if (!document.querySelector('.publication-toolbar')) return;
   const pubs = window.PUBLICATIONS || [];
@@ -132,4 +155,4 @@ function renderPublications() {
   }));
   search.addEventListener('input', update); update();
 }
-quantumCanvas(); flareCanvas(); renderPublications();
+quantumCanvas(); flareCanvas(); renderTalks(); renderPublications();

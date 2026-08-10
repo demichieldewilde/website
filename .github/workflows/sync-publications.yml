@@ -1,4 +1,4 @@
-name: Sync publications
+name: Sync publications, talks and CV
 
 on:
   workflow_dispatch:
@@ -13,21 +13,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the website
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Fetch ORCID and arXiv publications
+      - name: Fetch ORCID, Crossref and arXiv publications
         run: python scripts/sync_publications.py
+        env:
+          PYTHONUTF8: "1"
+      - name: Update generated website and CV data
+        run: python scripts/build_cv.py --no-compile
+        env:
+          PYTHONUTF8: "1"
+      - name: Compile CV PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: cv
+          root_file: Michiel_De_Wilde_CV.tex
+          latexmk_use_xelatex: true
+      - name: Publish compiled CV PDF to website assets
+        run: cp cv/Michiel_De_Wilde_CV.pdf assets/CV_Michiel_De_Wilde.pdf
       - name: Commit updates
         run: |
-          if git diff --quiet -- assets/publications.js; then
-            echo "Publications are already current."
+          if git diff --quiet -- assets/publications.js assets/talks.js cv/Michiel_De_Wilde_CV.tex assets/CV_Michiel_De_Wilde.pdf; then
+            echo "Publications, talks and CV are already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/publications.js
-          git commit -m "Update publications"
+          git add assets/publications.js assets/talks.js cv/Michiel_De_Wilde_CV.tex assets/CV_Michiel_De_Wilde.pdf
+          git commit -m "Update publications, talks and CV"
           git push

@@ -1,0 +1,11 @@
+cv/*.pdf
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.toc
+cv/*.synctex.gz
+cv/*.fls
+cv/*.fdb_latexmk
+__pycache__/
+*/__pycache__/
+tmp/pdfs/
