@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://demichieldewilde.github.io/website/sitemap.xml

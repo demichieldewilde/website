@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://demichieldewilde.github.io/website/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://demichieldewilde.github.io/website/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://demichieldewilde.github.io/website/nl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://demichieldewilde.github.io/website/"/>
+  </url>
+  <url>
+    <loc>https://demichieldewilde.github.io/website/publications.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://demichieldewilde.github.io/website/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://demichieldewilde.github.io/website/nl/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://demichieldewilde.github.io/website/publications.html"/>
+  </url>
+  <url>
+    <loc>https://demichieldewilde.github.io/website/cv.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://demichieldewilde.github.io/website/cv.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://demichieldewilde.github.io/website/nl/cv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://demichieldewilde.github.io/website/cv.html"/>
+  </url>
+  <url>
+    <loc>https://demichieldewilde.github.io/website/interests.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://demichieldewilde.github.io/website/interests.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://demichieldewilde.github.io/website/nl/interests.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://demichieldewilde.github.io/website/interests.html"/>
+  </url>
+  <url>
+    <loc>https://demichieldewilde.github.io/website/nl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://demichieldewilde.github.io/website/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://demichieldewilde.github.io/website/nl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://demichieldewilde.github.io/website/"/>
+  </url>
+  <url>
+    <loc>https://demichieldewilde.github.io/website/nl/publications.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://demichieldewilde.github.io/website/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://demichieldewilde.github.io/website/nl/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://demichieldewilde.github.io/website/publications.html"/>
+  </url>
+  <url>
+    <loc>https://demichieldewilde.github.io/website/nl/cv.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://demichieldewilde.github.io/website/cv.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://demichieldewilde.github.io/website/nl/cv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://demichieldewilde.github.io/website/cv.html"/>
+  </url>
+  <url>
+    <loc>https://demichieldewilde.github.io/website/nl/interests.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://demichieldewilde.github.io/website/interests.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://demichieldewilde.github.io/website/nl/interests.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://demichieldewilde.github.io/website/interests.html"/>
+  </url>
+</urlset>
