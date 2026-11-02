@@ -30,7 +30,7 @@ window.PUBLICATIONS = [
     "title": "A complete classification of 2d symmetry protected states with symmetric entanglers",
     "authors": "Alex Bols, Wojciech De Roeck, Michiel De Wilde, Bruno de O. Carvalho",
     "venue": "arXiv",
-    "url": "http://arxiv.org/abs/2603.09959v1"
+    "url": "http://arxiv.org/abs/2603.09959v2"
   },
   {
     "type": "paper",
