@@ -1,7 +1,7 @@
 const LANG = document.documentElement.lang === 'nl' ? 'nl' : 'en';
 const I18N = {
-  en: { menuOpen: 'Menu', menuClose: 'Close', typeLabels: { paper: 'Paper', preprint: 'Preprint' }, dateLocale: 'en-GB' },
-  nl: { menuOpen: 'Menu', menuClose: 'Sluiten', typeLabels: { paper: 'Artikel', preprint: 'Preprint' }, dateLocale: 'nl-BE' },
+  en: { menuOpen: 'Menu', menuClose: 'Close', typeLabels: { paper: 'Paper', preprint: 'Preprint' }, accepted: 'Accepted', dateLocale: 'en-GB' },
+  nl: { menuOpen: 'Menu', menuClose: 'Sluiten', typeLabels: { paper: 'Artikel', preprint: 'Preprint' }, accepted: 'Aanvaard', dateLocale: 'nl-BE' },
 };
 const T = I18N[LANG];
 
@@ -157,7 +157,7 @@ function renderPublications() {
   function update() {
     const query = search.value.toLowerCase();
     const shown = pubs.filter(p => (filter === 'all' || p.type === filter) && JSON.stringify(p).toLowerCase().includes(query));
-    list.innerHTML = shown.map(p => `<article class="pub-item"><span>${p.year}</span><div><p>${T.typeLabels[p.type] || p.type}</p><h3>${p.title}</h3><small>${p.authors} · ${p.venue}</small></div><a href="${p.url}" target="_blank" rel="noopener">↗</a></article>`).join('');
+    list.innerHTML = shown.map(p => `<article class="pub-item"><span>${p.year}</span><div><p>${p.status === 'accepted' ? T.accepted : (T.typeLabels[p.type] || p.type)}</p><h3>${p.title}</h3><small>${p.authors} · ${p.venue}</small></div><a href="${p.url}" target="_blank" rel="noopener">↗</a></article>`).join('');
   }
   document.querySelectorAll('.filter').forEach(btn => btn.addEventListener('click', () => {
     document.querySelector('.filter.active').classList.remove('active'); btn.classList.add('active'); filter=btn.dataset.filter; update();

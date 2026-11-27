@@ -1,0 +1,14 @@
+[
+  {
+    "match": "(Corrigendum)",
+    "exclude": true
+  },
+  {
+    "match": "A complete classification of 2d symmetry protected states with symmetric entanglers",
+    "set": {
+      "type": "paper",
+      "status": "accepted",
+      "venue": "Communications in Mathematical Physics"
+    }
+  }
+]

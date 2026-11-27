@@ -3,14 +3,6 @@ window.PUBLICATIONS = [
   {
     "type": "paper",
     "year": "2026",
-    "title": "Synthesizing Sun-as-a-star flare spectra from high-resolution solar observations (Corrigendum)",
-    "authors": "M. De Wilde, A. G. M. Pietrow, M. K. Druett, A. Pastor Yabar, J. Koza, I. Kontogiannis, O. Andriienko, A. Berlicki, A. R. Brunvoll, J. de la Cruz Rodríguez, J. Thoen Faber, R. Joshi, D. Kuridze, D. Nóbrega-Siverio, L. H. M. Rouppe van der Voort, J. Rybák, E. Scullion, A. M. Silva, Z. Vashalomidze, A. Vicente Arévalo, A. Wiśniewska, R. Yadav, T. V. Zaqarashvili, J. Zbinden, E. S. Øyre",
-    "venue": "Astronomy & Astrophysics",
-    "url": "https://doi.org/10.1051/0004-6361/202660990e"
-  },
-  {
-    "type": "paper",
-    "year": "2026",
     "title": "Classification of Locality Preserving Symmetries on Spin Chains",
     "authors": "Alex Bols, Wojciech De Roeck, Michiel De Wilde, Bruno de O. Carvalho",
     "venue": "Communications in Mathematical Physics",
@@ -25,12 +17,13 @@ window.PUBLICATIONS = [
     "url": "https://doi.org/10.1063/5.0325354"
   },
   {
-    "type": "preprint",
+    "type": "paper",
     "year": "2026",
     "title": "A complete classification of 2d symmetry protected states with symmetric entanglers",
     "authors": "Alex Bols, Wojciech De Roeck, Michiel De Wilde, Bruno de O. Carvalho",
-    "venue": "arXiv",
-    "url": "http://arxiv.org/abs/2603.09959v2"
+    "venue": "Communications in Mathematical Physics",
+    "url": "http://arxiv.org/abs/2603.09959v2",
+    "status": "accepted"
   },
   {
     "type": "paper",

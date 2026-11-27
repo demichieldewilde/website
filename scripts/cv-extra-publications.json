@@ -1,10 +1,11 @@
 [
   {
-    "type": "under review",
+    "type": "paper",
+    "status": "accepted",
     "year": "2026",
-    "title": "On the effects of spherical geometry on coronal mass ejection detection",
+    "title": "Geometric attenuation of stellar CME Doppler signatures",
     "authors": "A. G. M. Pietrow, M. De Wilde, M. Druett, H. Eklund, J. D. Alvarado-Gomez, V. Fedun",
-    "venue": "Nature Astronomy",
+    "venue": "Nature Communications",
     "url": ""
   }
 ]

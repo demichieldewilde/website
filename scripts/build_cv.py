@@ -38,6 +38,7 @@ TYPE_LABELS = {
     "en": {"paper": "Paper", "preprint": "Preprint"},
     "nl": {"paper": "Artikel", "preprint": "Preprint"},
 }
+ACCEPTED_LABEL = {"en": "Accepted", "nl": "Aanvaard"}
 MONTH_ABBREVIATIONS = {
     "en": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     "nl": ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"],
@@ -118,6 +119,8 @@ def render_pub_item_html(publication: dict, lang: str) -> str:
     year = html.escape(str(publication.get("year", "")), quote=False)
     kind = str(publication.get("type", "")).strip().casefold()
     type_label = TYPE_LABELS[lang].get(kind, html.escape(str(publication.get("type", "")), quote=False))
+    if str(publication.get("status", "")).strip().casefold() == "accepted":
+        type_label = ACCEPTED_LABEL[lang]
     title = html.escape(str(publication.get("title", "")), quote=False)
     authors = html.escape(str(publication.get("authors", "")), quote=False)
     venue = html.escape(str(publication.get("venue", "")), quote=False)
@@ -250,6 +253,8 @@ def render_talk(talk: dict) -> str:
 
 def publication_label(publication: dict) -> str:
     kind = str(publication.get("type", "")).strip().casefold()
+    if str(publication.get("status", "")).strip().casefold() == "accepted":
+        return "[accepted] "
     if kind in {"under review", "submitted"}:
         return "[under review] "
     if kind == "preprint":
