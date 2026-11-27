@@ -136,3 +136,23 @@ footer{min-height:190px;padding:3rem 5vw;display:grid;grid-template-columns:1fr 
 .now-section:has(.ista-photo){grid-template-columns:1.5fr 1.1fr .9fr}
 .ista-photo{min-height:440px}
 @media(max-width:900px){.now-section:has(.ista-photo){grid-template-columns:1fr}.ista-photo{min-height:0}}
+/* Fusion diagram (v2) and sun card */
+.fusion-diagram{max-width:360px}
+.fusion-diagram .fd-lines path{stroke-width:1.5}
+.fusion-diagram .fd-labels text{font:italic 300 16px var(--serif)}
+.fusion-diagram .fd-eq text{fill:var(--acid);font:italic 300 22px var(--serif);text-anchor:middle}
+.fusion-diagram .fd-eq .fd-sub{font-size:12px;text-anchor:start}
+.fusion-diagram .fd-eq text:first-child{font-style:normal}
+.research-card.featured.secondary{background:var(--acid)}
+.sun-graphic{width:100%;max-width:300px;height:170px;margin:auto 0;display:block;overflow:visible}
+.sun-graphic circle,.sun-graphic path{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:round}
+.sun-graphic{opacity:.45}
+.sun-graphic .sun-spots circle{fill:var(--ink);stroke:none}
+.fusion-diagram{max-width:none;height:auto;margin:auto 0}
+.fusion-diagram .fd-labels text{font-size:20px}
+.fusion-diagram .fd-eq text{font-size:28px}
+.fusion-diagram .fd-eq .fd-sub{font-size:15px}
+.sun-graphic{max-width:240px;height:auto;opacity:.6}
+.sun-graphic .sun-limb{stroke-dasharray:2 5}
+.sun-graphic circle,.sun-graphic path{stroke-width:1.6}
+.research-card h3{font-size:clamp(2.4rem,2.9vw,3.2rem)}
