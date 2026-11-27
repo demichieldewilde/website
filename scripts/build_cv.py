@@ -136,10 +136,19 @@ def render_talk_item_html(talk: dict, lang: str) -> str:
     venue = html.escape(str(talk.get("venue", "")).strip(), quote=False)
     location = f"{event} &middot; {venue}" if event and venue else (event or venue)
     title = html.escape(str(talk.get("title", "")), quote=False)
+    award = talk_award(talk, lang)
+    award_html = f'<p class="talk-award">{html.escape(award, quote=False)}</p>' if award else ""
     return (
         f'<article class="talk-item"><time datetime="{date_attr}">{date_display}</time>'
-        f'<div><p class="institution">{location}</p><h3>{title}</h3></div></article>'
+        f'<div><p class="institution">{location}</p><h3>{title}</h3>{award_html}</div></article>'
     )
+
+
+def talk_award(talk: dict, lang: str = "en") -> str:
+    award = talk.get("award") or ""
+    if isinstance(award, dict):
+        award = award.get(lang) or award.get("en") or ""
+    return str(award).strip()
 
 
 def publications_json_ld(publications: list[dict]) -> str:
@@ -231,8 +240,10 @@ def render_talk(talk: dict) -> str:
     if " (" in location and not location.endswith(")"):
         location += ")"
     title = latex_escape(talk.get("title", ""))
+    award = talk_award(talk)
+    award_tex = f" -- {latex_escape(award)}" if award else ""
     return (
-        f"{date} &\\textbf{{{location}}}\\newline\n"
+        f"{date} &\\textbf{{{location}}}{award_tex}\\newline\n"
         f"Title: {title}\\\\"
     )
 

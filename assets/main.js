@@ -135,7 +135,9 @@ function renderTalks() {
     const event = escapeHtml(talk.event);
     const venue = escapeHtml(talk.venue);
     const location = event && venue ? `${event} &middot; ${venue}` : event || venue;
-    return `<article class="talk-item"><time datetime="${escapeHtml(talk.date)}">${formatTalkDate(talk.date)}</time><div><p class="institution">${location}</p><h3>${escapeHtml(talk.title)}</h3></div></article>`;
+    const award = talk.award && typeof talk.award === 'object' ? (talk.award[LANG] || talk.award.en) : talk.award;
+    const awardHtml = award ? `<p class="talk-award">${escapeHtml(award)}</p>` : '';
+    return `<article class="talk-item"><time datetime="${escapeHtml(talk.date)}">${formatTalkDate(talk.date)}</time><div><p class="institution">${location}</p><h3>${escapeHtml(talk.title)}</h3>${awardHtml}</div></article>`;
   }).join('');
 }
 

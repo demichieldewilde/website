@@ -158,3 +158,4 @@ footer{min-height:190px;padding:3rem 5vw;display:grid;grid-template-columns:1fr 
 .research-card h3{font-size:clamp(2.4rem,2.9vw,3.2rem)}
 .ista-photo img{object-position:center}
 .poster-link{margin-left:2rem}
+.talk-award{font:300 .7rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--rust);margin:.2rem 0 0}
