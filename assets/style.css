@@ -109,4 +109,30 @@ footer{min-height:190px;padding:3rem 5vw;display:grid;grid-template-columns:1fr 
 .collaboration-strip .text-link{font-family:var(--mono);font-size:.68rem}
 @media(max-width:850px){.paper-note{grid-template-columns:1fr;gap:3rem;padding:4rem 0}.paper-note.reverse .paper-visual{order:0}.paper-visual{height:360px}.collaboration-call,.collaboration-strip{grid-template-columns:1fr}.collaboration-call{padding:3rem}.collaboration-call .button{grid-column:1}}
 .site-header nav a.lang-switch{opacity:.55}.site-header nav a.lang-switch:hover{opacity:1}
-@media(max-width:520px){.paper-visual{height:290px}.paper-note-copy h2{font-size:2.6rem}.collaboration-call{padding:2rem}}
+@media(max-width:520px){.paper-visual{height:290px}.paper-note-copy h2{font-size:2.6rem}.collaboration-call{padding:2rem}}/* Portrait in the hero circle */
+.hero-portrait{margin:0;overflow:hidden}
+.hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:52% center;border-radius:50%;filter:saturate(.9) contrast(1.03)}
+/* F-move between fusion trees */
+.fusion-diagram{width:100%;max-width:340px;height:180px;margin:0 auto;display:block}
+.fusion-diagram .fd-lines path{fill:none;stroke:var(--acid);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.fusion-diagram .fd-labels text{fill:var(--acid);font:italic 300 15px var(--serif);text-anchor:middle}
+.fusion-diagram .fd-labels .fd-f{font-size:17px}
+/* Secondary field card */
+.research-grid{grid-template-columns:1.2fr 1fr 1fr 1.1fr}
+.research-card.secondary{background:rgba(241,240,232,.05)}
+.spectrum-graphic{width:100%;max-width:300px;height:150px;margin:auto 0;display:block}
+.spectrum-graphic path,.spectrum-graphic line{fill:none;stroke:var(--acid);stroke-width:1.4;stroke-linejoin:round}
+.spectrum-graphic line{opacity:.45}
+@media(max-width:1200px){.research-grid{grid-template-columns:1fr 1fr}.research-card:nth-child(2){border-right:0}.research-card:nth-child(-n+2){border-bottom:1px solid rgba(241,240,232,.18)}}
+@media(max-width:900px){.research-grid{grid-template-columns:1fr}}
+.delay-3{transition-delay:.36s}
+/* Rectangular hero portrait and ISTA photo */
+.quantum-stage.hero-portrait{border-radius:0;aspect-ratio:4/5;width:min(34vw,480px);background:var(--ink)}
+.hero-portrait img{border-radius:0}
+.ista-photo img{object-position:40% center}
+.ista-photo figcaption{gap:1rem;align-items:baseline}
+.ista-photo figcaption a{color:inherit;border-bottom:1px solid rgba(241,240,232,.4)}
+@media(max-width:900px){.quantum-stage.hero-portrait{width:80vw;max-width:480px}.ista-photo{aspect-ratio:4/3}}
+.now-section:has(.ista-photo){grid-template-columns:1.5fr 1.1fr .9fr}
+.ista-photo{min-height:440px}
+@media(max-width:900px){.now-section:has(.ista-photo){grid-template-columns:1fr}.ista-photo{min-height:0}}
