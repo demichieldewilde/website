@@ -156,3 +156,4 @@ footer{min-height:190px;padding:3rem 5vw;display:grid;grid-template-columns:1fr 
 .sun-graphic .sun-limb{stroke-dasharray:2 5}
 .sun-graphic circle,.sun-graphic path{stroke-width:1.6}
 .research-card h3{font-size:clamp(2.4rem,2.9vw,3.2rem)}
+.ista-photo img{object-position:center}
